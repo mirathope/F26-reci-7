@@ -104,7 +104,7 @@ Function: I'd pick Git.Service.log() from our opencode project. I wrote it for t
 
 Property 1 (pattern: round trip): If I generate a commit history, actually make those commits in a temp repo, and then call log(), I should get the same commits back: same number of commits, and each one has the same author, email, message, and changed files that I put in.
 
-Property 2 (pattern: invariant). For a history with N commits, asking for n commits (n ≥ 1) should give exactly min(n, N) commits, newest first. Also, asking for fewer commits should give a prefix of what you get when asking for more.
+Property 2 (pattern: invariant): For a history with N commits, asking for n commits (n ≥ 1) should give exactly min(n, N) commits, newest first. Also, asking for fewer commits should give a prefix of what you get when asking for more.
 
 Generator: The generator has to build a whole commit history (a few commits, each with an author, email, message, and file changes) and then create it in a temp repo every run. Just using random strings would miss most of the tricky cases:
 
